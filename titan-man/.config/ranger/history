@@ -1,7 +1,3 @@
-rename PNG_transparency_demonstration_1.png
-set colorscheme jungle
-set colorscheme snow
-set colorscheme default
 open_with r
 shell mkdir nordvpn
 shel
@@ -30,9 +26,7 @@ mkdir zsh-you-should-use
 mkdir themes
 Q
 mkdir coomand-not-found
-
 rename cryptolc
-shell 
 help
 mkdir vim
 rename gruvbox_mod.vim
@@ -42,6 +36,15 @@ open_with
 open_with%space2
 open_with%space 2
 open_with 2
-delete
 mkdir layouts
 q
+mkdir dotfiles
+mkdir titan-man
+mkdir .config
+mkdir .loacal
+rename .local
+mkdir bin
+mkdir fun
+shell 
+delete
+

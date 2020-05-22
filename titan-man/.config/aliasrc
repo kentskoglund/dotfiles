@@ -6,7 +6,6 @@ alias ll='exa -lhaF --color=auto'
 alias ls='exa --color=auto'
 alias df='df -H'
 alias du='du -ch'
-#alias update='sudo apt update -y && sudo apt upgrade -y'
 alias flushdns='systemd-resolve --flush-caches'
 alias checkdns='sudo systemd-resolve --statistics'
 alias nocom="sed -E '/^[[:blank:]]*(\/\/|#)/d;s/#.*//' | strings"
@@ -16,7 +15,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias bitcoin='/home/kent/crypto/bitcoin-0.19.0.1/bin/bitcoin-qt'
-alias gconfig='/usr/bin/git --git-dir=$HOME/git/kent/dotfiles-titan-man/ --work-tree=$HOME'
+#alias gconfig='/usr/bin/git --git-dir=$HOME/Nextcloud/Linux/dotfiles/ --work-tree=$HOME/Nextcloud/Linux/dotfiles/'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # SSH proxy
