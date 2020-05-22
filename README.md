@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles my computers
+Dotfiles from my computers
