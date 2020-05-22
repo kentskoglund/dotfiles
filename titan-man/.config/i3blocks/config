@@ -1,0 +1,102 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+command=/home/kent/.config/i3blocks/i3blocks_scripts/$BLOCK_NAME
+markup=pango
+
+#[click]
+#full_text=Click me!
+#command=echo "Got clicked with button $button"
+#color=#A4C2F4
+
+# Restart i3 on click
+#[restart]
+#full_text=Restart i3
+#command=i3-msg -q restart
+#interval=0
+
+[time]
+label=  
+command=date '+%T'
+interval=60
+
+[date]
+label= 
+command=date '+%Y-%m-%d'
+interval=60
+
+[CPU]
+label= 
+#command=ps -eo pcpu,comm | sort -k 1 -nr | head -1
+command=ps -Ao pcpu,comm --sort=-pcpu --no-headers | head -n 1
+interval=2
+
+[ip-internal]
+label= 
+command=ip a | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | xargs | sed 's/\ /\ \-\ /'
+#color=#FFBF37
+interval=3600
+
+[ip-public]
+label=  
+command=wget -qO - icanhazip.com
+#color=#6999E8
+interval=3600
+
+#[battery2]
+#command=/home/kent/.config/i3blocks/i3blocks_scripts/battery2
+#interval=5
+
+#[battery3]
+#label=bat
+#command=acpi | sed "s/Battery [0-9]: //;s/[Dd]ischarging, /🔋/;s/[Nn]ot charging, /🛑/;s/[Cc]harging, /🔌/;s/[Uu]nknown, /♻️/;s/[Ff]ull, /⚡/;s/ \(remaining\|until charged\)//;s/\, rate information unavailable//"
+#interval=5
+
+#[clock]
+#label=📅
+#interval=30
+
+#[internet]
+#interval=10
+
+[packages]
+label= 
+interval=3600
+
+[battery]
+command=/home/kent/.config/i3blocks/i3blocks_scripts/battery
+interval=5
+
+#[volume]
+#interval=once
+#signal=10
+
+[volume-pulseaudio]
+command=/home/kent/.config/i3blocks/i3blocks_scripts/volume-pulseaudio
+interval=once
+signal=1
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0

@@ -1,0 +1,23 @@
+{
+    "border": "none",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 340,
+       "width": 846,
+       "x": 867,
+       "y": 1794
+    },
+    "name": "E-post – Kent Skoglund – Outlook",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^Google\\-chrome$",
+        "instance": "^crx_pkooggnaalmfkidjmlhoelhdllpphaga$",
+        "title": "^E\\-post\\ \\–\\ Kent\\ Skoglund\\ \\–\\ Outlook$",
+        "window_role": "^pop\\-up$"
+       }
+    ],
+    "type": "con"
+}
+

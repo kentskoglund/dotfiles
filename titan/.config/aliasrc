@@ -1,0 +1,180 @@
+# ======== Alias ========
+
+alias ll='ls -lhaF --color=auto'
+alias ls='ls -CF --color=auto'
+alias df='df -H'
+alias du='du -ch'
+#alias update='sudo apt update -y && sudo apt upgrade -y'
+alias flushdns='systemd-resolve --flush-caches'
+alias checkdns='sudo systemd-resolve --statistics'
+alias nocom="sed -E '/^[[:blank:]]*(\/\/|#)/d;s/#.*//' | strings"
+alias vi='vim'
+alias t='tail -f'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias bitcoin='/home/kent/crypto/bitcoin-0.19.0.1/bin/bitcoin-qt'
+alias gconfig='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# SSH proxy
+alias kentproxy='ssh -D 7575 -F /dev/null -J kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no kent@kent.oslomet.no'
+alias sshproxy='ssh -D 7576 -F /dev/null -J kent@ssh.oslomet.no kent@ssh-drift.oslomet.no'
+
+# get rid of command not found
+alias cd..='cd ..'
+
+# a quick way to get out of current directory
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+# Colorize the grep command output
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Colorize diff output
+alias diff='colordiff'
+
+# Make mount command output pretty and human readable format
+alias mount='mount | column -t'
+
+# handy short cuts
+alias h='history'
+#alias j='jobs -l'
+
+# Show open ports
+alias ports='netstat -tulanp'
+
+# pass options to free
+alias meminfo='free -m -l -t -h'
+
+# get top process eating memory
+alias psmem='ps auxfc | sort -nr -k 4'
+alias psmem10='ps auxfc | sort -nr -k 4 | head -10'
+alias psmemt='ps axch -o cmd:15,%mem --sort=-%mem | head'
+
+# get top process eating cpu
+alias pscpu='ps auxfc | sort -nr -k 3'
+alias pscpu10='ps auxfc | sort -nr -k 3 | head -10'
+
+# Get server cpu info
+alias cpuinfo='lscpu'
+
+# Siste installerte pakker
+alias lastinstalled='cat /var/log/dpkg.log | grep "\ install\ "'
+
+# Siste oppgraderte pakker
+alias lastupgraded='cat /var/log/dpkg.log | grep "\ upgrade\ "'
+
+#export EDITOR=vim
+
+# rsync
+alias rsync-copy="rsync -avz --progress -h"
+alias rsync-move="rsync -avz --progress -h --remove-source-files"
+alias rsync-update="rsync -avzu --progress -h"
+alias rsync-synchronize="rsync -avzu --delete --progress -h"
+
+
+# ======== Functions ======== #
+# Update Ubuntu
+function update () {
+	echo -e "======= \e[32mStarter oppdatering\e[39m ======="
+	sudo apt update -qq
+	sudo apt full-upgrade -yy
+	sudo apt upgrade -yy
+	sudo apt autoremove -yy
+	echo -e "======= \e[32mFølgende pakker oppdatert i dag\e[39m ======="
+	cat /var/log/dpkg.log | grep "\ upgrade\ " | grep "$(date +"%Y-%m-%d")"
+	echo -e "======= \e[32mOppdatering ferdig\e[39m ======="
+	return
+}
+
+# Update zsh with custom git files
+function zsh_update () {
+	echo -e "======= \e[32mStarter ZSH oppdatering\e[39m ======="
+	cd .oh-my-zsh
+	git pull
+	git stash
+	upgrade_oh_my_zsh
+	git add *
+	git stash apply
+	cd
+	echo -e "======= \e[32mZSH Oppdatering ferdig\e[39m ======="
+	return
+}
+
+# ex - archive extractor - usage: ex <file> #
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Prints apt history
+# Usage:
+#   apt-history install
+#   apt-history upgrade
+#   apt-history remove
+#   apt-history rollback
+#   apt-history list
+# Based On: https://linuxcommando.blogspot.com/2008/08/how-to-show-apt-log-history.html
+function apt-history() {
+  case "$1" in
+    install)
+      zgrep --no-filename 'install ' $(ls -rt /var/log/dpkg*)
+      ;;
+    upgrade|remove)
+      zgrep --no-filename $1 $(ls -rt /var/log/dpkg*)
+      ;;
+    rollback)
+      zgrep --no-filename upgrade $(ls -rt /var/log/dpkg*) | \
+        grep "$2" -A10000000 | \
+        grep "$3" -B10000000 | \
+        awk '{print $4"="$5}'
+      ;;
+    list)
+      zgrep --no-filename '' $(ls -rt /var/log/dpkg*)
+      ;;
+    *)
+      echo "Parameters:"
+      echo " install - Lists all packages that have been installed."
+      echo " upgrade - Lists all packages that have been upgraded."
+      echo " remove - Lists all packages that have been removed."
+      echo " rollback - Lists rollback information."
+      echo " list - Lists all content of dpkg logs."
+      ;;
+  esac
+}
+
+# History with grep
+function hs
+{
+    history | grep $*
+}
+
+# Zoom update check
+function zoomup
+{
+          /home/kent/scripts/zoomup.sh
+}

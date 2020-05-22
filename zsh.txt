@@ -1,0 +1,11 @@
+# ZSH
+$ sudo apt install zsh zsh-common zsh-syntax-highlighting autojump zsh-autosuggestions
+$ sudo vim /etc/passwd
+	/bin/zsh
+
+mkdir -p "$HOME/.config/zsh"
+wget https://raw.githubusercontent.com/kentskoglund/dotfiles/master/.zshrc -O ~/.zshrc
+wget https://raw.githubusercontent.com/kentskoglund/dotfiles/master/Nextcloud/Linux/myconfig/aliases -O ~/aliases
+
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+

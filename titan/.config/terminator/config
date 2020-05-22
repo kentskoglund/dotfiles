@@ -1,0 +1,129 @@
+[global_config]
+  borderless = True
+  title_hide_sizetext = True
+  inactive_color_offset = 0.75
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = Ubuntu Mono 15
+[keybindings]
+[profiles]
+  [[default]]
+    visible_bell = True
+    background_color = "#300a24"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+  [[After Dark]]
+    visible_bell = True
+    background_color = "#10111b"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
+  [[Chalk]]
+    visible_bell = True
+    background_color = "#2b2d2e"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#708284"
+    foreground_color = "#d2d8d9"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#7d8b8f:#b23a52:#789b6a:#b9ac4a:#2a7fac:#bd4f5a:#44a799:#d2d8d9:#888888:#f24840:#80c470:#ffeb62:#4196ff:#fc5275:#53cdbd:#d2d8d9"
+  [[Dracula]]
+    visible_bell = True
+    background_color = "#1e1f29"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#d3d7cf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2e3436:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#a40000:#3465a4:#ff5555:#50fa7b:#c4a000:#8be9fd:#bd93f9:#ff79c6:#c4a000"
+  [[Duotone Dark]]
+    visible_bell = True
+    background_color = "#1f1d27"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#ff9839"
+    foreground_color = "#d3d7cf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#729fcf:#d9393e:#2dcd73:#d9b76e:#ffc284:#de8d40:#2488ff:#b7a1ff:#59608e:#d9393e:#2dcd73:#d9b76e:#ffc284:#de8d40:#2488ff:#eae5ff"
+  [[Firewatch]]
+    visible_bell = True
+    background_color = "#1e2027"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#f6f7ec"
+    foreground_color = "#9ba2b2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#585f6d:#d95360:#5ab977:#dfb563:#4d89c4:#d55119:#44a8b6:#e6e5ff:#585f6d:#d95360:#5ab977:#dfb563:#4c89c5:#d55119:#44a8b6:#e6e5ff"
+  [[Glacier]]
+    visible_bell = True
+    background_color = "#0c1115"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#6c6c6c"
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 5000
+    palette = "#3465a4:#ef2929:#8ae234:#fb9435:#3698c5:#fcaf3e:#c17d11:#ffffff:#729fcf:#bd0f2f:#49e998:#fddf6e:#2a8bc1:#ef2929:#a0b6d3:#ffffff"
+    use_system_font = False
+  [[Hurtado]]
+    visible_bell = True
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#bbbbbb"
+    foreground_color = "#dbdbdb"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#575757:#ff1b00:#a5e055:#fbe74a:#496487:#fd5ff1:#86e9fe:#cbcccb:#262626:#d51d00:#a5df55:#fbe84a:#89beff:#c001c1:#86eafe:#dbdbdb"
+  [[Obsidian]]
+    visible_bell = True
+    background_color = "#283033"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#c0cad0"
+    foreground_color = "#cdcdcd"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#a60001:#00bb00:#fecd22:#3a9bdb:#bb00bb:#00bbbb:#bbbbbb:#555555:#ff0003:#93c863:#fef874:#a1d7ff:#ff55ff:#55ffff:#ffffff"
+  [[PaulMillr]]
+    visible_bell = True
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#4d4d4d"
+    foreground_color = "#f2f2f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2a2a2a:#ff0000:#79ff0f:#e7bf00:#396bd7:#b449be:#66ccff:#bbbbbb:#666666:#ff0080:#66ff66:#f3d64e:#709aed:#db67e6:#7adff2:#ffffff"
+  [[Sick]]
+    visible_bell = True
+    background_color = "#272935"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#aeaeb1"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2e3436:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#d3d7cf:#555753:#f47375:#6bf1be:#e5f081:#6aa1fd:#c481ff:#6de4fd:#eeeeec"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = Glacier
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]

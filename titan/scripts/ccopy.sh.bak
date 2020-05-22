@@ -1,0 +1,13 @@
+	cp -rf /home/kent/.config/alacritty/ /home/kent/Nextcloud/Linux/myconfig/titan/.config/ &&
+	cp -rf /home/kent/.config/nvim/ /home/kent/Nextcloud/Linux/myconfig/titan/.config/ &&
+	cp -f /home/kent/.config/aliasrc /home/kent/Nextcloud/Linux/myconfig/titan/.config/ &&
+	cp -rf /home/kent/.config/terminator/ /home/kent/Nextcloud/Linux/myconfig/titan/.config/ &&
+	cp -f /home/kent/.vimrc /home/kent/Nextcloud/Linux/myconfig/titan/ &&
+	cp -rf /home/kent/.vim/ /home/kent/Nextcloud/Linux/myconfig/titan/ &&
+	cp -f /home/kent/.zshrc /home/kent/Nextcloud/Linux/myconfig/titan/ &&
+	cp -rf /home/kent/.config/zsh/ /home/kent/Nextcloud/Linux/myconfig/titan/.config/ &&
+	cp -rf .local/share/remmina/ /home/kent/Nextcloud/Linux/myconfig/titan/.local/share/ &&
+	cp -rf /home/kent/scripts/ /home/kent/Nextcloud/Linux/myconfig/titan/ &&
+	echo -e "======= \e[32mOppdatering ferdig\e[39m =======" ||
+	echo "***\e[91m Copy failed ***"
+

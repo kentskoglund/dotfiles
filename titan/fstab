@@ -1,0 +1,23 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sdd2 during installation
+UUID=797c24f4-f85d-41b8-b2fb-15fa61ab9dd9	/	ext4    errors=remount-ro	0	1
+# /boot/efi was on /dev/nvme0n1p2 during installation
+UUID=22EF-B4F1  /boot/efi				vfat    umask=0077		0       1
+# /home was on /dev/sdd3 during installation
+UUID=96a8d515-be47-4bd6-b01c-43073e4d9a25	/home	ext4	defaults		0	2
+/swapfile					none	swap    sw			0	0
+# Windows D /dev/sdb2  
+UUID=8C38972C38971474				/media/kent/D	ntfs		0	0	0
+# Windows E /dev/sda2  
+#UUID=70BA8765BA872726	/media/kent/E	ntfs	0	0	0
+#Samsung 850 Pro 256GB
+UUID=cfdd395c-c8cf-47f2-8e96-d1ded8966ef1	/data2	ext4	defaults		0	0
+#Intel 200GB
+UUID=a40b7506-9f05-4415-8c44-77778127e76f	/data	ext4	defaults		0	0
+#/dev/sde1					/data	ext4	defaults		0	0
