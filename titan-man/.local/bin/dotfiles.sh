@@ -26,6 +26,8 @@ if [[ `git status --porcelain` ]]; then
 	git push origin master
 fi
 
+paplay "/home/kent/Nextcloud/Android_share/Themes/Sounds/notifications/LowBattery.ogg"
+
 if [ $? -eq 0 ]
 then
   echo -e "\e[32m*** Git push vellykket ***\e[39m"
@@ -36,3 +38,5 @@ else
   notify-send -h string:fgcolor:#ff4444 "***  Git push feilet  ***"
   exit 1
 fi
+
+
