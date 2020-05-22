@@ -19,9 +19,9 @@ rsync -ah --delete --exclude ".git" /home/kent/.config/nvim/ /home/kent/Nextclou
 rsync -ah --delete --exclude ".git" /home/kent/.config/ranger/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/.config/ranger/ &&
 rsync -ah --delete --exclude ".git" /home/kent/.config/terminator/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/.config/terminator/ &&
 rsync -ah --delete --exclude ".git" /home/kent/.vim/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/.vim/ &&
-rsync -ah --delete --exclude ".git" /home/kent/.config/zsh/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/.config/zsh/
-rsync -ah --delete --exclude ".git" /home/kent/git/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/git/
-rsync -ah --delete --exclude ".git" /home/kent/scripts/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/scripts/
+rsync -ah --delete --exclude ".git" /home/kent/.config/zsh/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/.config/zsh/ &&
+rsync -ah --delete --exclude ".git" /home/kent/git/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/git/ &&
+rsync -ah --delete --exclude ".git" /home/kent/scripts/ /home/kent/Nextcloud/Linux/dotfiles/titan-man/scripts/ &&
 if [ $? -eq 0 ]
 then
   echo -e "\e[32m*** Kopiering vellykket ***\e[39m"
