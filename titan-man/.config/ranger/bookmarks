@@ -1,7 +1,7 @@
-':/home/kent/Nextcloud/Linux/dotfiles
+':/home/kent/Nextcloud/Linux/dotfiles/titan-man/.vim/plugged/jellybeans.vim
 s:/home/kent
 1:/run/user/1000/gvfs/smb-share:server=plex,share=tv
 2:/run/user/1000/gvfs/smb-share:server=plex,share=film
 3:/run/user/1000/gvfs/smb-share:server=plex,share=finished
-c:/home/kent/Nextcloud/Linux/myconfig
+c:/home/kent/Nextcloud/Linux/dotfiles
 k:/home/kent/Nextcloud/Linux/dotfiles/titan-man
