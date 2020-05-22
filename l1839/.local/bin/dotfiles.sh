@@ -13,7 +13,7 @@ timestamp() {
 }
 
 # Kopier my stuff
-"$SCRIPT_PATH"
+#"$SCRIPT_PATH"
 
 # git push dotfiles
 if [[ `git status --porcelain` ]]; then
