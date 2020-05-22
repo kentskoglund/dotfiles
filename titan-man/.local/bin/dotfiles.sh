@@ -13,7 +13,10 @@ timestamp() {
 }
 
 # Kopier my stuff
-#"$SCRIPT_PATH"
+"$SCRIPT_PATH"
+
+# Vent litt så Nexcloud ikke er opptatt
+sleep 300
 
 # git push dotfiles
 if [[ `git status --porcelain` ]]; then
@@ -21,4 +24,15 @@ if [[ `git status --porcelain` ]]; then
 	git add .
 	git commit -m "automatic update: $(timestamp)"
 	git push origin master
+fi
+
+if [ $? -eq 0 ]
+then
+  echo -e "\e[32m*** Git push vellykket ***\e[39m"
+  notify-send -h string:fgcolor:#44ff44 "***  Git push vellykket  ***"
+  exit 0
+else
+  echo -e "\e[101m *** Git push feilet\e[39m ***"
+  notify-send -h string:fgcolor:#ff4444 "***  Git push feilet  ***"
+  exit 1
 fi
