@@ -49,6 +49,9 @@ bindsym $mod+m bar mode toggle
 # Ranger
 bindsym $mod+Shift+o exec --no-startup-id ranger
 
+# 4.28. Delaying urgency hint reset on workspace change
+force_display_urgency_hint 900 ms
+
 
 #######################################################################################
 ###								Dual Monitor Setup									###
@@ -59,6 +62,8 @@ bindsym $mod+x exec multimonitor
 #  # Use arandr for the configuration
 #  exec xrandr --no-startup-id --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 -mode 1920x1080 --pos 1920x0 --rotate normal
 exec xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-1 --off --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal --output DP-3 --off
+
+exec xrandr --output DP-0 --primary
 
 #set firstMonitor "DP-0"
 #set secondMonitor "DP-2"
@@ -73,8 +78,8 @@ exec xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off -
  workspace "$ws8" output DP-2
  workspace "$wm9" output DP-2
  workspace "$ws10" output DP-2
- workspace "$ws12" output DP-2
- workspace "$ws13" output DP-0
+ #workspace "$ws11" output DP-2
+ #workspace "$ws12" output DP-0
  #workspace 13 output DP-2
  #workspace 14 output DP-2
 
