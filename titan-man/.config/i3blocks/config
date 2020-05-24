@@ -33,6 +33,17 @@ label=
 command=date '+%Y-%m-%d'
 interval=60
 
+[tiling]
+command=/home/kent/.config/i3blocks/i3blocks_scripts/tiling.py
+interval=1
+
+[disk]
+command=/home/kent/.config/i3blocks/i3blocks_scripts/disk2
+LABEL=  Home 
+#DIR=$HOME
+#ALERT_LOW=10
+interval=30
+
 [CPU]
 label= 
 #command=ps -eo pcpu,comm | sort -k 1 -nr | head -1
@@ -50,19 +61,6 @@ label=
 command=wget -qO - icanhazip.com
 #color=#6999E8
 interval=3600
-
-#[battery2]
-#command=/home/kent/.config/i3blocks/i3blocks_scripts/battery2
-#interval=5
-
-#[battery3]
-#label=bat
-#command=acpi | sed "s/Battery [0-9]: //;s/[Dd]ischarging, /🔋/;s/[Nn]ot charging, /🛑/;s/[Cc]harging, /🔌/;s/[Uu]nknown, /♻️/;s/[Ff]ull, /⚡/;s/ \(remaining\|until charged\)//;s/\, rate information unavailable//"
-#interval=5
-
-#[clock]
-#label=📅
-#interval=30
 
 #[internet]
 #interval=10
