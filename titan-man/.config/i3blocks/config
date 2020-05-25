@@ -23,15 +23,20 @@ markup=pango
 #command=i3-msg -q restart
 #interval=0
 
-[time]
-label=  
-command=date '+%T'
-interval=60
+#[time]
+#label=  
+#command=date '+%T'
+#interval=60
 
-[date]
-label= 
-command=date '+%Y-%m-%d'
-interval=60
+[date2]
+label= 
+command=echo "`date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=1
+
+#[date]
+#label= 
+#command=date '+%Y-%m-%d'
+#interval=60
 
 [tiling]
 command=/home/kent/.config/i3blocks/i3blocks_scripts/tiling.py
@@ -39,7 +44,7 @@ interval=1
 
 [disk]
 command=/home/kent/.config/i3blocks/i3blocks_scripts/disk2
-LABEL=  Home 
+LABEL= 
 #DIR=$HOME
 #ALERT_LOW=10
 interval=30
@@ -57,7 +62,7 @@ command=ip a | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\
 interval=3600
 
 [ip-public]
-label=  
+label= 
 command=wget -qO - icanhazip.com
 #color=#6999E8
 interval=3600
