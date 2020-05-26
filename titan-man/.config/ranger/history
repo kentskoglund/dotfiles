@@ -1,5 +1,3 @@
-shell mkdir nordvpn
-shel
 rename test1b.txt
 rename test.txta
 rename test.txt
@@ -48,3 +46,5 @@ shell
 mkdir .local
 mkdir fun
 delete
+rename 7 .json
+rename 8 .json

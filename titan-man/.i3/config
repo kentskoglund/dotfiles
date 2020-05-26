@@ -29,9 +29,6 @@ bindsym $mod+n border normal
 font pango:Ubuntu Regular Bold 13
 #font pango:monospace 12
 
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec terminator
 
@@ -58,7 +55,6 @@ force_display_urgency_hint 900 ms
 bindsym $mod+x exec multimonitor
 
 #  # Use arandr for the configuration
-#  exec xrandr --no-startup-id --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 -mode 1920x1080 --pos 1920x0 --rotate normal
 exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal
 
 #exec xrandr --output DP-0 --primary
@@ -101,14 +97,11 @@ exec --no-startup-id pa-applet
 #bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle && pkill -RTMIN+1 i3block && notify-send 'Mute toggle'
 
 # Volume buttons - amixer
-#bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks && notify-send 'Volume up'
-#bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks && notify-send 'Volume down'
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks && amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]' | head -n 1 | xargs dunstify -r 9903
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks && amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]' | head -n 1 | xargs dunstify -r 9903
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks && notify-send 'Mute toggle'
 
 # #---Extra XF86 Keys---# #
-# XF86Calendar button = Alt_L + Super_L
 bindsym XF86AudioStop exec --no-startup-id playerctl stop && notify-send 'Player stop'
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous && notify-send 'Player previous'
 bindsym XF86AudioNext exec --no-startup-id playerctl next && notify-send 'Player next'
@@ -167,6 +160,7 @@ exec --no-startup-id nextcloud
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /home/kent/git/autotiling/autotiling.py
 exec --no-startup-id remmina -i
+#exec_always --no-startup-id /home/kent/.config/polybar/launch.sh
 
 # Lockscreen / screensaver
 #exec --no-startup-id xautolock -time 10 -locker blurlock -corners -00- -notify 20 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 20 seconds'"
@@ -181,15 +175,15 @@ exec --no-startup-id remmina -i
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 
-set $ws1 "1:" 
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:Test "
+set $ws1 "1 " 
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6 "
+set $ws7 "7 "
+set $ws8 "8 "
+set $ws9 "9 Test "
 
 # focus_follows_mouse no
 
@@ -228,6 +222,10 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+bindsym --whole-window $mod+Shift+button1 floating toggle
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -480,15 +478,15 @@ mode "resize" {
 ###         Start i3bar to display a workspace bar and i3blockx/i3status			###
 #######################################################################################
 bar {
-	i3bar_command i3bar
+	i3bar_command i3bar --transparency
 	status_command i3blocks -c ~/.config/i3blocks/config
-#	status_command i3status
-#	font pango:monospace 12
+	#status_command i3status
+	#font pango:monospace 12
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 	tray_output DP-0
-#	tray_output DP-2
+	#tray_output DP-2
 	output DP-0
 	output DP-2
 	bindsym button4 nop
@@ -498,7 +496,6 @@ bar {
     ##START THEMING BAR
 	# i3 bar colors
     colors {
-        #background #222D31
         background #05182780
         statusline #F9FAF9
         separator  #454947
