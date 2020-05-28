@@ -373,6 +373,7 @@ for_window [title="Remmina Remote Desktop Client"] floating enable
 for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [title="ImageMagick: -"] floating enable enable border pixel 10
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down $height px
+for_window [class="Gnome-calculator"] floating enable
 
 # example floating with position
 #for_window [class="Tilda"] floating enable,  move absolute position 25 px 520 px

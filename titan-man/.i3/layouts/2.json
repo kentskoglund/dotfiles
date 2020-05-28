@@ -1,0 +1,139 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 383,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "/bin/zsh",
+            "percent": null,
+            "swallows": [
+               {
+               // "class": "^Terminator$",
+               // "instance": "^terminator$",
+               // "title": "^\\/bin\\/zsh$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 383,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "/bin/zsh",
+                    "percent": null,
+                    "swallows": [
+                       {
+                       // "class": "^Terminator$",
+                       // "instance": "^terminator$",
+                       // "title": "^\\/bin\\/zsh$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 383,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "/bin/zsh",
+                    "percent": null,
+                    "swallows": [
+                       {
+                       // "class": "^Terminator$",
+                       // "instance": "^terminator$",
+                       // "title": "^\\/bin\\/zsh$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // splith split container with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1388,
+               "width": 1699,
+               "x": 1738,
+               "y": 1103
+            },
+            "name": "YouTube - Google Chrome",
+            "percent": null,
+            "swallows": [
+               {
+               // "class": "^Google\\-chrome$",
+               // "instance": "^google\\-chrome$",
+               // "title": "^YouTube\\ \\-\\ Google\\ Chrome$",
+               // "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,4 +1,3 @@
-rename test1b.txt
 rename test.txta
 rename test.txt
 rename test3.txt
@@ -45,6 +44,7 @@ shell
 
 mkdir .local
 mkdir fun
-delete
 rename 7 .json
 rename 8 .json
+delete
+rename 2.json
