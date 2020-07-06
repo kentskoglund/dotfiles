@@ -62,15 +62,15 @@ bindsym $mod+m bar mode toggle
 #set firstMonitor "eDP"
 #set secondMonitor "Displayport-0"
 
-# workspace "$ws1" output DP-0
-# workspace "$ws2" output DP-0
-# workspace "$ws3" output DP-0
-# workspace "$ws4" output DP-0
-# workspace "$ws5" output DP-0
-# workspace "$ws6" output DP-0
-# workspace "$ws7" output DP-2
-# workspace "$ws8" output DP-2
- #workspace 9 output DP-2
+# workspace $ws1 output DP-0
+# workspace $ws2 output DP-0
+# workspace $ws3 output DP-0
+# workspace $ws4 output DP-0
+# workspace $ws5 output DP-0
+# workspace $ws6 output DP-0
+# workspace $ws7 output DP-2
+# workspace $ws8 output DP-2
+ #workspace $ws9 output DP-2
  #workspace 10 output DP-2
  #workspace 11 output DP-2
  #workspace 12 output DP-2
@@ -136,6 +136,7 @@ bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+exec --no-startup-id remmina -i
 # Screenshots
 #bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -206,14 +207,15 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1: 
-set $ws2 2:
-set $ws3 3:
-set $ws4 4:
-set $ws5 5:
-set $ws6 6:
-set $ws7 7:
-set $ws8 8:
+set $ws1 1  
+set $ws2 2 
+set $ws3 3 
+set $ws4 4 
+set $ws5 5 
+set $ws6 6 
+set $ws7 7 
+set $ws8 8 
+set $ws9 9 Test 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -224,6 +226,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -234,6 +237,7 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -244,33 +248,35 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 
 #######################################################################################
 ###                       Assign applications to workspaces							###
 #######################################################################################
 # Workspace 2 browser related
-assign [class="Vivaldi-stable"] $ws2
-assign [class="Google-chrome|Vivaldi-stable|firefox"] $ws2
+#assign [class="Vivaldi-stable"] $ws2
+#assign [class="Google-chrome|Vivaldi-stable|firefox"] $ws2
 
 # Workspace 3 misc
 # assign [class="Pcmanfm"] $ws3
 
 # Workspace 4 meetings
-assign [class="zoom"] $ws4
-assign [class="crx_pkooggnaalmfkidjmlhoelhdllpphaga"] $ws4
-assign [class="Microsoft Teams$"] $ws4
 
 # Workspace 5
+assign [class="org.remmina.Remmina"] $ws5
 
 # Workspace 6
+assign [class="Vmplayer|VirtualBox"] $wsr6
 
-# Workspace 7 virtual machines and settings
-assign [class="Vmplayer|VirtualBox"] $ws7
+# Workspace 7
+assign [class="zoom"] $ws7
+assign [class="crx_pkooggnaalmfkidjmlhoelhdllpphaga"] $ws7
+assign [class="Microsoft Teams$"] $ws7
 
-# Workspace 8 virtual machines and settings
-assign [class="vlc"] $ws8
-assign [class="Spotify"] $ws8
+# Workspace 8
+#assign [class="vlc"] $ws8
+#assign [class="Spotify"] $ws8
 #assign [class="Spotify|spotify"] $ws8
 #fix for spotify not moving to workspace 8
 #for_window [class="Spotify"] move to workspace 8
@@ -336,14 +342,16 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+#set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-#    bindsym l exec --no-startup-id '~/scripts/matrix.sh'
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+   # bindsym l exec --no-startup-id '/home/kent/.local/bin/lock.sh', mode "default"
+   #bindsym l exec --no-startup-id i3exit lock, mode "default"
+   bindsym l exec --no-startup-id '/home/kent/.local/bin/matrix.sh', mode "default"
+    #bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    #bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
@@ -395,7 +403,8 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /home/kent/git/autotiling/autotiling.py
 
 # Lockscreen / screensaver
-exec --no-startup-id xautolock -time 10 -locker blurlock -notify 20 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 20 seconds'"
+exec --no-startup-id xautolock -time 10 -locker lock.sh -notify 20 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 20 seconds'"
+#exec --no-startup-id xautolock -time 10 -locker blurlock -notify 20 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 20 seconds'"
 #exec --no-startup-id xautolock -bell 1 -time 10 -locker blurlock
 #exec --no-startup-id xautolock -time 1 -locker '~/scripts/matrix.sh'
 
@@ -439,7 +448,7 @@ set_from_resource $term_color15    color15
 ###         Start i3bar to display a workspace bar and i3blockx/i3status			###
 #######################################################################################
 bar {
-	i3bar_command i3bar
+	i3bar_command i3bar --transparency
 	status_command i3blocks -c ~/.config/i3blocks/config
 	#status_command i3status
 	#font pango: System San Francisco Display, FontAwesome 12
@@ -457,15 +466,14 @@ bar {
     ##START THEMING BAR
 	# i3 bar colors
     colors {
-        #background #222D31
-        background $term_background
+        background #05182780
         statusline #F9FAF9
         separator  #454947
 
 		# color class        border  backgr. text
-	    focused_workspace  #595B5B #FFA726 #000000
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #FFA726
+        focused_workspace  #595B5B #FFA726 #000000
+        active_workspace   #595B5B #353836 #FFA726
+        inactive_workspace #595B5B #222D31 #FDF6E3B3
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }

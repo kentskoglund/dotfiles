@@ -1,9 +1,18 @@
-#!/bin/sh
+#!/bin/zsh
 
-for layout in ~/.i3/layouts/*; do
-  i3-msg "workspace $(basename "$layout" .json); append_layout $layout"
-done
-
-(zoom &)
-(teams &)
-(outlook-kent &)
+sleep 1.0
+i3-msg 'workspace "7 "'
+sleep 1.0
+outlook-kent.sh &
+sleep 1.0
+i3-msg 'workspace "8 "'
+sleep 1.0
+zoom &
+sleep 1.0
+teams &
+sleep 1.0
+i3-msg 'workspace "1 "'
+sleep 1.0
+terminator &
+sleep 1.0
+google-chrome-stable --profile-directory="Profile 1" &

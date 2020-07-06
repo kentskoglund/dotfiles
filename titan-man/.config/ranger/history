@@ -1,8 +1,3 @@
-rename test.txta
-rename test.txt
-rename test3.txt
-mkdir testfir
-rename testdir
 git pull
 shell git pull
 rename Pictures
@@ -46,5 +41,10 @@ mkdir .local
 mkdir fun
 rename 7 .json
 rename 8 .json
-delete
 rename 2.json
+rename oslomet-layout.sh
+rename oslomet.sh
+rename outlook-kent.sh
+delete
+search lisens
+rename 2020 telling MS lisenser.txt

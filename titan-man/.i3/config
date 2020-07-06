@@ -302,6 +302,10 @@ bindsym $mod+Shift+Ctrl+Up move container to output up
 #######################################################################################
 ###                       Assign applications to workspaces							###
 #######################################################################################
+
+# Workspace 1 
+#assign [class="Vivaldi-stable"] $ws2
+
 # Workspace 2 browser related
 #assign [class="Vivaldi-stable"] $ws2
 #assign [class="Google-chrome|Vivaldi-stable|Firefox"] $ws2
@@ -327,7 +331,8 @@ assign [class="Vmplayer|VirtualBox"] $ws6
 
 # Workspace 7 Jobb
 assign [class="zoom"] $ws7
-assign [class="Microsoft Teams$"] $ws7
+assign [title="Zoom"] $ws7
+assign [class="Microsoft Teams"] $ws7
 
 # Workspace 8 - Jobb
 assign [class="crx_pkooggnaalmfkidjmlhoelhdllpphaga"] $ws8
@@ -374,6 +379,7 @@ for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [title="ImageMagick: -"] floating enable enable border pixel 10
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down $height px
 for_window [class="Gnome-calculator"] floating enable
+#for_window [title="zoom"] floating enable enable
 
 # example floating with position
 #for_window [class="Tilda"] floating enable,  move absolute position 25 px 520 px
@@ -396,14 +402,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
 #    bindsym l exec --no-startup-id '~/scripts/matrix.sh'
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    #bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    #bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
