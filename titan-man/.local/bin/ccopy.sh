@@ -10,6 +10,7 @@ rsync -ah $HOME/.vimrc $KOPI/ &&
 rsync -ah $HOME/.zshrc $KOPI/ &&
 rsync -ah $HOME/.Xresources $KOPI/ &&
 rsync -ah $HOME/.xinitrc $KOPI/ &&
+rsync -ah $HOME/.ssh/config $KOPI/ &&
 rsync -ah --delete --exclude ".git" $HOME/.i3/ $KOPI/.i3/ &&
 rsync -ah --delete --exclude ".git" $HOME/.local/bin/ $KOPI/.local/bin/ &&
 rsync -ah --delete --exclude ".git" $HOME/.config/i3status/ $KOPI/.config/i3status/ &&

@@ -1,0 +1,137 @@
+# SSH config
+HashKnownHosts yes
+AddKeysToAgent yes
+#
+IdentityFile ~/.ssh/id_ed25519
+IdentityFile ~/.ssh/id_rsa
+#IdentityFile ~/.ssh/old_id_ed25519
+IdentitiesOnly yes
+#
+
+#host asus
+#	Hostname 10.0.0.1
+#	User kent
+
+host usg
+	Hostname 10.0.0.1
+	User kent
+
+host cloudkey
+	Hostname 10.0.0.7
+	User kent
+
+Host vmh1
+	HostName 10.0.0.14
+	User root
+
+Host vmh2
+	HostName 10.0.0.16
+	User root
+
+Host zabbix
+	HostName 10.0.0.19
+	User root
+
+Host miniban
+    HostName 10.0.0.25
+    User root
+
+Host wg
+	HostName 10.0.0.26
+	User kent
+
+Host pihole
+	HostName 10.0.0.50
+	User root
+
+Host plex
+	HostName 10.0.0.51
+	User kent
+
+Host nc
+	HostName 10.0.0.53
+	User kent
+
+Host dns1
+	HostName 10.0.0.54
+	User root
+
+Host nc2
+	HostName 10.0.0.55
+	User kent
+
+Host grafana
+	HostName 10.0.0.56
+	User root
+
+Host proxy
+	HostName 10.0.0.79
+	User kent
+
+Host proxy2
+	HostName 10.0.0.80
+	User kent
+
+Host vmh2-ilo
+	HostName 10.0.0.206
+	User kent
+
+Host l1839
+	HostName 10.0.0.244
+	User kent
+
+Host kent
+    HostName kent.oslomet.no
+    User kent
+
+Host mikro
+    HostName mikro.oslomet.no
+    User kent
+	DynamicForward 7575
+#	LocalForward 7575 mikro.oslomet.no:7575
+
+Host vcenter.oslomet.no
+    PubkeyAuthentication no
+    User root
+
+Host ns1
+    HostName ns1.oslomet.no
+    User root
+
+Host ssh-drift
+    HostName ssh-drift.oslomet.no
+    User kent
+
+Host ssh
+    HostName ssh.oslomet.no
+    User kent
+
+Match !exec "nc -w 1 -z %h %p"
+	ProxyJump kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no
+	IdentityFile ~/.ssh/id_ed25519
+	ForwardAgent yes
+
+Host *.oslomet.no
+	User root
+
+Host *.hioa.no
+	User root
+
+Host *.intern.oslomet.no
+    PubkeyAuthentication no
+#	AddressFamily inet
+    User root
+
+Host *.intern.hioa.no
+    PubkeyAuthentication no
+#	AddressFamily inet
+    User root
+
+host *
+	Port 22
+	VerifyHostKeyDNS yes
+    ForwardX11 no
+    ForwardX11Trusted no
+	ControlMaster auto
+	ControlPersist 2h
+	ControlPath ~/.ssh/controlmasters/%r@%h:%p
