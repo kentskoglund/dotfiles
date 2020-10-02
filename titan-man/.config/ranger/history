@@ -44,7 +44,7 @@ search lisens
 rename 2020 telling MS lisenser.txt
 mkdir test
 mkdir kvitteringer
-delete
 open_with vim
 mkdir .ssh
 linemode sizemtime
+delete

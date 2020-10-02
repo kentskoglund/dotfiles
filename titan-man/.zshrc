@@ -19,7 +19,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/vim
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/google-chrome-stable
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -66,6 +66,7 @@ bindkey '^ ' autosuggest-accept
 # Enable colors and change prompt:
 autoload -U colors && colors
 
+# For å få ctrl-a, end og home til å virke
 bindkey	'^[[H'	beginning-of-line
 bindkey	'^[[F'	end-of-line
 bindkey	'^[[3~'	delete-char
