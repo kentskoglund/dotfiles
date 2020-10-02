@@ -1,4 +1,3 @@
-shell c
 open_with 1
 bulkrename %s
 flat 3
@@ -48,3 +47,4 @@ mkdir kvitteringer
 delete
 open_with vim
 mkdir .ssh
+linemode sizemtime

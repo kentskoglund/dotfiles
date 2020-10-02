@@ -2,8 +2,8 @@
 
 #alias ll='ls -lhaF --color=auto'
 #alias ls='ls -CF --color=auto'
-alias ll='exa -lhaF --color=auto'
-alias ls='exa --color=auto'
+alias ll='exa -lhaF --color=auto --group-directories-first'
+alias ls='exa --color=auto --group-directories-first'
 alias df='df -H'
 alias du='du -ch'
 alias flushdns='systemd-resolve --flush-caches'
