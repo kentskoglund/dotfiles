@@ -13,6 +13,6 @@ teams &
 sleep 1.0
 i3-msg 'workspace "1 "'
 sleep 1.0
-terminator &
-sleep 1.0
+#terminator &
+#sleep 1.0
 google-chrome-stable --profile-directory="Profile 1" &

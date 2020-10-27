@@ -55,8 +55,8 @@ force_display_urgency_hint 900 ms
 bindsym $mod+x exec multimonitor
 
 #  # Use arandr for the configuration
-exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal
-
+#exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal
+exec xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
 #exec xrandr --output DP-0 --primary
 
 #set firstMonitor "DP-0"
@@ -70,10 +70,10 @@ exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primar
  workspace $ws6 output DP-0
  workspace $ws7 output DP-2
  workspace $ws8 output DP-2
- #workspace "$wm9" output DP-2
- #workspace "$ws10" output DP-2
- #workspace "$ws11" output DP-2
- #workspace "$ws12" output DP-0
+ workspace $ws9 output HDMI-0
+# workspace $ws10 output HDMI-0
+ #workspace $ws11 output DP-2
+ #workspace $ws12 output DP-0
  #workspace 13 output DP-2
  #workspace 14 output DP-2
 
@@ -183,7 +183,7 @@ set $ws5 "5 "
 set $ws6 "6 "
 set $ws7 "7 "
 set $ws8 "8 "
-set $ws9 "9 Test "
+set $ws9 "9 "
 
 # focus_follows_mouse no
 
@@ -330,9 +330,8 @@ assign [class="org.remmina.Remmina"] $ws5
 assign [class="Vmplayer|VirtualBox"] $ws6
 
 # Workspace 7 Jobb
-#assign [class="zoom"] $ws7
-#assign [title="Zoom"] $ws7
-#assign [class="Microsoft Teams"] $ws7
+assign [title="Zoom Meeting"] $ws7
+assign [class="Microsoft Teams - Preview"] $ws7
 
 # Workspace 8 - Jobb
 #assign [class="crx_pkooggnaalmfkidjmlhoelhdllpphaga"] $ws8
@@ -372,15 +371,17 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 #for_window [class="KeePass2"] floating enable
-for_window [title="Microsoft Teams-varsling"] floating enable
-for_window [title="Microsoft Teams - Preview"] floating enable
-for_window [title="microsoft teams - preview"] floating enable
+#for_window [title="Microsoft Teams-varsling"] floating enable resize set 200 200
+#for_window [class="Microsoft Teams-varsling"] floating enable resize set 200 200
+for_window [title="Microsoft Teams Notification"] floating enable resize set 200 200
+#for_window [class="Microsoft Teams - Preview"] floating enable resize set 200 200
 for_window [title="Terminator Preferences"] floating enable
 for_window [title="Remmina Remote Desktop Client"] floating enable
 for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [title="ImageMagick: -"] floating enable enable border pixel 10
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down $height px
 for_window [class="Gnome-calculator"] floating enable
+for_window [title="VNC Viewer"] floating enable
 #for_window [title="zoom"] floating enable enable
 
 # example floating with position
@@ -498,6 +499,7 @@ bar {
 	#tray_output DP-2
 	output DP-0
 	output DP-2
+	output HDMI-0
 	bindsym button4 nop
 	bindsym button5 nop
 	strip_workspace_numbers no

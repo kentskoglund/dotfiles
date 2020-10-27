@@ -1,6 +1,6 @@
 [Default Applications]
-x-scheme-handler/http=userapp-google-chrome-stable.desktop
-x-scheme-handler/https=userapp-google-chrome-stable.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/ftp=userapp-google-chrome-stable.desktop
 x-scheme-handler/chrome=userapp-google-chrome-stable.desktop
 text/html=userapp-google-chrome-stable.desktop
@@ -36,7 +36,7 @@ application/x-extension-shtml=userapp-google-chrome-stable.desktop;
 application/xhtml+xml=userapp-google-chrome-stable.desktop;
 application/x-extension-xhtml=userapp-google-chrome-stable.desktop;
 application/x-extension-xht=userapp-google-chrome-stable.desktop;
-image/jpeg=viewnior.desktop;gpicview.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;gimp.desktop;viewnior.desktop;gpicview.desktop;
 image/png=gimp.desktop;viewnior.desktop;gpicview.desktop;
 text/plain=mousepad.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird.desktop;
@@ -54,3 +54,4 @@ video/3gpp=vlc.desktop;
 application/vnd.ms-publisher=mousepad.desktop;
 audio/mpeg=mpv.desktop;audacity.desktop;
 application/x-virtual-boy-rom=mousepad.desktop;vim.desktop;
+application/octet-stream=mousepad.desktop;
