@@ -1,9 +1,9 @@
 [Default Applications]
-x-scheme-handler/http=userapp-google-chrome-stable.desktop
-x-scheme-handler/https=userapp-google-chrome-stable.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/ftp=userapp-google-chrome-stable.desktop
 x-scheme-handler/chrome=userapp-google-chrome-stable.desktop
-text/html=userapp-google-chrome-stable.desktop
+text/html=google-chrome.desktop
 application/x-extension-htm=userapp-google-chrome-stable.desktop
 application/x-extension-html=userapp-google-chrome-stable.desktop
 application/x-extension-shtml=userapp-google-chrome-stable.desktop
@@ -22,6 +22,10 @@ x-scheme-handler/spice=org.remmina.Remmina.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/remmina=org.remmina.Remmina.desktop
 application/x-remmina=org.remmina.Remmina.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/webcal=google-chrome.desktop
 
 [Added Associations]
 x-scheme-handler/http=exo-web-browser.desktop;
@@ -42,8 +46,6 @@ x-scheme-handler/mailto=userapp-Thunderbird.desktop;
 message/rfc822=userapp-Thunderbird.desktop;
 application/pdf=epdfview.desktop;
 application/x-bittorrent=deluge.desktop;
-x-scheme-handler/rdp=org.remmina.Remmina.desktop;
-x-scheme-handler/spice=org.remmina.Remmina.desktop;
-x-scheme-handler/vnc=org.remmina.Remmina.desktop;
-x-scheme-handler/remmina=org.remmina.Remmina.desktop;
-application/x-remmina=org.remmina.Remmina.desktop;
+inode/directory=exo-file-manager.desktop;
+x-scheme-handler/trash=exo-file-manager.desktop;
+

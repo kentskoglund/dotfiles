@@ -55,8 +55,8 @@ force_display_urgency_hint 900 ms
 bindsym $mod+x exec multimonitor
 
 #  # Use arandr for the configuration
-#exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal
-exec xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
+exec xrandr --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal
+#exec xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
 #exec xrandr --output DP-0 --primary
 
 #set firstMonitor "DP-0"
@@ -123,8 +123,8 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause && notify-send '
 
 
 #######################################################################################
-###							 Start applications	with shortcut					    ###
 #######################################################################################
+###							 Start applications	with shortcut					    ###
 # Start Applications
 bindsym $mod+Ctrl+b exec terminator -e 'bmenu'
 bindsym $mod+Shift+F2 exec firefox
@@ -141,6 +141,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym Print exec --no-startup-id scrot '_-%Y-%m-%d-%s_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 #bindsym Control+Print exec --no-startup-id xfce4-screenshooter
+bindsym $mod+p exec --no-startup-id pavucontrol
 
 
 #######################################################################################

@@ -15,8 +15,8 @@ fi
 
 if [ $monitor_mode = "BOTH" ]; then
         monitor_mode="INTERNAL"
-        #xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary  --output $EXTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT2 --off
-		xrandr --output HDMI-0 --off --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --off
+        xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary  --output $EXTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT2 --off
+		#xrandr --output HDMI-0 --off --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --off
 		sleep 2
 		pkill nitrogen
 		pkill picom
@@ -25,8 +25,8 @@ if [ $monitor_mode = "BOTH" ]; then
 	   	picom -b  
 elif [ $monitor_mode = "INTERNAL" ]; then
         monitor_mode="BOTH"
-		#xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output $EXTERNAL_OUTPUT --mode 1920x1080 --pos 597x0 --rotate normal
-		xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
+		xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output $EXTERNAL_OUTPUT --mode 1920x1080 --pos 597x0 --rotate normal
+		#xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
 		sleep 2
 		pkill nitrogen
 		pkill picom
@@ -38,7 +38,7 @@ elif [ $monitor_mode = "INTERNAL" ]; then
 #        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
 else
         monitor_mode="BOTH"
-		#xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output $EXTERNAL_OUTPUT --mode 1920x1080 --pos 597x0 --rotate normal
-		xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
+		xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output $EXTERNAL_OUTPUT --mode 1920x1080 --pos 597x0 --rotate normal
+		#xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
 fi
 echo "${monitor_mode}" > /tmp/monitor_mode.dat
