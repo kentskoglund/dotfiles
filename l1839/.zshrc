@@ -14,6 +14,7 @@ alias history="history 1"
 export HISTCONTROL=ignoreboth
 export EDITOR=vim
 #export TERM=terminator
+export TERMINAL=terminator
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/vim

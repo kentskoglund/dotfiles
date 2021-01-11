@@ -1,0 +1,17 @@
+#!/bin/sh
+
+
+chosen=$(ls ~/Nextcloud/Linux/cheat_sheets | dmenu -i -l 30 )
+
+# Exit if none chosen.
+[ -z "$chosen" ] && exit
+
+# If you run this command with an argument, it will automatically insert the
+# character. Otherwise, show a message that the emoji has been copied.
+if [ -n "$1" ]; then
+	xdg-open ~/Nextcloud/Linux/cheat_sheets/$chosen
+	#xdotool type "$chosen"
+else
+	xdg-open ~/Nextcloud/Linux/cheat_sheets/$chosen
+	notify-send "'$chosen' opened." &
+fi

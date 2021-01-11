@@ -49,12 +49,16 @@ bindsym $mod+z exec --no-startup-id morc_menu
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
+# Start pavuctrl
+bindsym $mod+p exec --no-startup-id pavucontrol
+
 
 #######################################################################################
 ###								Dual Monitor Setup									###
 #######################################################################################
 # Toggle External Display
 #bindsym $mod+x exec multimonitor
+bindsym $mod+x exec displayselect
 
 # Use arandr for the configuration
 #exec xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-1 --off --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal --output DP-3 --off
@@ -124,15 +128,17 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 #######################################################################################
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+Shift+F2 exec vivaldi-stable
-bindsym $mod+Shift+F3 exec ranger
+bindsym $mod+Shift+F2 exec brave
+bindsym $mod+F3 exec --no-startup-id terminator -e ranger
+bindsym $mod+Shift+F4 exec --no-startup-id dmenuunicode
+bindsym $mod+Shift+F5 exec --no-startup-id cheats
 #bindsym $mod+F3 exec pcmanfm
 #bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 #bindsym $mod+F5 exec terminal -e 'mocp'
 #bindsym $mod+t exec --no-startup-id pkill picom
 #bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -208,14 +214,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1  
+set $ws1 1 
 set $ws2 2 
 set $ws3 3 
 set $ws4 4 
 set $ws5 5 
 set $ws6 6 
 set $ws7 7 
-set $ws8 8 
+set $ws8 8 
 set $ws9 9 Test 
 
 # switch to workspace

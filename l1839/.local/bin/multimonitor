@@ -1,3 +1,43 @@
 #!/bin/sh
 
-exec xrandr --output DVI-D-0 --off --output HDMI-0 --off --output HDMI-1 --off --output DP-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-1 --off --output DP-2 --mode 1920x1080 --pos 597x0 --rotate normal --output DP-3 --off
+EXTERNAL_OUTPUT="Displayport-4"
+INTERNAL_OUTPUT="eDP"
+
+# if we don't have a file, start at zero
+if [ ! -f "/tmp/monitor_mode.dat" ] ; then
+  monitor_mode="INTERNAL"
+
+# otherwise read the value from the file
+else
+  monitor_mode=`cat /tmp/monitor_mode.dat`
+fi
+
+if [ $monitor_mode = "BOTH" ]; then
+        monitor_mode="INTERNAL"
+		xrandr --output eDP --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off
+		#xrandr --output HDMI-0 --off --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --off
+		sleep 2
+		pkill nitrogen
+		pkill picom
+		nitrogen --restore
+		sleep 1
+	   	picom -b  
+elif [ $monitor_mode = "INTERNAL" ]; then
+        monitor_mode="BOTH"
+		xrandr --output eDP --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --mode 3440x1440 --pos 0x0 --rotate normal --output DisplayPort-5 --off
+		xrandr --output $INTERNAL_OUTPUT --mode 3440x1440 --pos 0x1080 --rotate normal --primary --output $EXTERNAL_OUTPUT --mode 1920x1080 --pos 597x0 --rotate normal
+		#xrandr --output HDMI-0 --mode 3440x1440 --pos 0x1080 --rotate normal --output DP-0 --primary --mode 3440x1440 --pos 3440x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 4200x0 --rotate normal
+		sleep 2
+		pkill nitrogen
+		pkill picom
+		nitrogen --restore
+		sleep 1
+	   	picom -b  
+#elif [ $monitor_mode = "INTERNAL" ]; then
+#        monitor_mode="CLONES"
+#        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
+else
+        monitor_mode="INTERNAL"
+		xrandr --output eDP --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off
+fi
+echo "${monitor_mode}" > /tmp/monitor_mode.dat
