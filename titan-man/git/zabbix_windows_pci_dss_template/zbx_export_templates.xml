@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-06-06T07:44:00Z</date>
+    <groups>
+        <group>
+            <name>Templates/Modules</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>PCI DSS Windows</template>
+            <name>PCI DSS Windows</name>
+            <description>Written for my Zabbix Course at https://sbcode.net/zabbix/&#13;
+MIT License</description>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Security</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Event ID 4608 : Windows is starting up</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4608,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>PCI DSS Windows Items</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4608|4609|4610|4611|4612|4614|4616|4624|4625|4634|4657|4660|4663|4670|4674|4720|4722|4723|4725|4726|4727|4728|4729|4730|4731|4732|4733|4734|4738|4740|4767|5143|6144,,skip]</key>
+                    <trends>0</trends>
+                    <status>DISABLED</status>
+                    <value_type>LOG</value_type>
+                    <description>An example, disabled by default, to demonstrate polling many event ids in one item.</description>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Event ID 4609 : Windows is shutting down</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4609,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4610 : An authentication package has been loaded by the Local Security Authority</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4610,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4611 : A trusted logon process has been registered with the Local Security Authority</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4611,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4612 : Internal resources allocated for the queuing of audit messages have been exhausted, leading to the loss of some audits</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4612,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4614 : A notification package has been loaded by the Security Account Manager</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4614,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4616 : The system time was changed</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4616,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4624 : Successful Logon</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4624,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4625 : Failed Logon</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4625,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4634 : An account was logged off</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4634,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4657 : A registry value was modified</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4657,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4660 : An object was deleted</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4660,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4663 : An attempt was made to access an object</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4663,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4670 : Permissions on an object were changed</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4670,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4674 : An operation was attempted on a privileged object</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4674,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4720 : A user account was created</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4720,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4722 : A user account was enabled</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4722,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4723 : An attempt was made to change an account's password</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4723,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4725 : A user account was disabled</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4725,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4726 : A user account was deleted</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4726,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4727 : A security-enabled global group was created</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4727,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4728 : A member was added to a security-enabled global group</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4728,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4729 : A member was removed from a security-enabled global group</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4729,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4730 : A security-enabled global group was deleted</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4730,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4731 : A security-enabled local group was created</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4731,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4732 : A member was added to a security-enabled local group</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4732,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4733 : A member was removed from a security-enabled local group</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4733,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4734 : A security-enabled local group was deleted</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4734,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4738 : A user account was changed</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4738,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4740 : A user account was locked out</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4740,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 4767 : A user account was unlocked</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,4767,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 5143 : A network share object was modified</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,5143,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Event ID 6144 : Security policy in the group policy objects has been applied successfully</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>eventlog[Security,,,,6144,,skip]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <applications>
+                        <application>
+                            <name>Security</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JAVASCRIPT</type>
+                            <params>var lines = value.split(&quot;\n&quot;);
+var lineZero = lines[0];
+var accountName = &quot;&quot;;
+lines.forEach(function(line) {
+  if (line.trim().substring(0, 13) === &quot;Account Name:&quot;) {
+    accountName = line.substring(14).trim();
+  }
+});
+return accountName + &quot; : &quot; + lineZero;</params>
+                        </step>
+                    </preprocessing>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

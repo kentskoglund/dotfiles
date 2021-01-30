@@ -128,7 +128,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 #######################################################################################
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+Shift+F2 exec brave
+bindsym $mod+Shift+F2 exec firefox
+bindsym $mod+Shift+Ctrl+F2 exec brave
 bindsym $mod+F3 exec --no-startup-id terminator -e ranger
 bindsym $mod+Shift+F4 exec --no-startup-id dmenuunicode
 bindsym $mod+Shift+F5 exec --no-startup-id cheats
@@ -396,7 +397,7 @@ mode "resize" {
 ###           Autostart   -    execute applications at boot time					###
 #######################################################################################
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager

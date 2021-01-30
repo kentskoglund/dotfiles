@@ -20,6 +20,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 # SSH proxy
 alias kentproxy='ssh -D 7575 -F /dev/null -J kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no kent@kent.oslomet.no'
+alias kentmosh='mosh --ssh ssh -D 7575 -F /dev/null -J kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no kent@kent.oslomet.no'
 #alias kentproxy='ssh -TND 7575 -F /dev/null -J kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no kent@kent.oslomet.no'
 alias hjemproxy='ssh -D 7575 -F /dev/null -J kent@ssh.oslomet.no,kent@ssh-drift.oslomet.no kent@kent.oslomet.no'
 

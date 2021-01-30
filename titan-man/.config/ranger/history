@@ -1,16 +1,6 @@
-mdir web
-mkdir web
-mkdir zsh-you-should-use
-mkdir themes
-Q
-mkdir coomand-not-found
-rename cryptolc
-help
-mkdir vim
 rename gruvbox_mod.vim
 mkdir zsh
 rename .zshrc.old
-open_with 
 open_with%space2
 open_with%space 2
 open_with 2
@@ -22,7 +12,6 @@ mkdir .config
 mkdir .loacal
 rename .local
 mkdir bin
-shell 
 
 mkdir .local
 mkdir fun
@@ -43,8 +32,19 @@ rename julegaver2016.txt
 rename julegaver2020.txt
 linemode sizemtime
 mkdir live-wallpaper
-delete
 search 
 bulkrename 
 rename Ae Plexus 4k-HAi0ImL7qS0.mkv
 rename Watching the Universe ( Red ) [ 1080P 60 ]-lXop63VPO3w.mkv
+rename userparameter-standard.conf_old
+rename userparameter-standa.conf_old_
+rename userparameter-standard.conf
+open_with 
+rename known_hosts2-older
+shell 
+rename A2_rapporter
+open_with%space1
+open_with%space
+rename Avsluttende mote 11012021.pdf
+rename Presentasjon fra mote FoU 07012021.pptx
+delete

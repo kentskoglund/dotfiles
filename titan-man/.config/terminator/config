@@ -23,12 +23,11 @@
     visible_bell = True
     background_color = "#10111b"
     background_darkness = 0.8
-    background_type = transparent
     cursor_color = "#aaaaaa"
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
-    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
+    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#9a9996:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
   [[Chalk]]
     visible_bell = True
     background_color = "#2b2d2e"
@@ -131,7 +130,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = Glacier
+      profile = After Dark
       type = Terminal
     [[[window0]]]
       parent = ""

@@ -10,7 +10,7 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 export MOZ_WEBRENDER=1
 export MOZ_ACCELERATED=1
-alias history="history 1"
+#alias history="history 1"
 export HISTCONTROL=ignoreboth
 export EDITOR=vim
 #export TERM=terminator
@@ -35,14 +35,22 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
+
+# History
 HISTFILE=~/.local/share/zsh/zsh_histfile
 #HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
+# History immediate append
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+# History timestamp
+setopt EXTENDED_HISTORY
+
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-HIST_STAMPS="yyyy-mm-dd"
+#HIST_STAMPS="yyyy-mm-dd"
 
 # Sources
 for f in ~/.config/zsh/plugins/*; do source "$f"; done

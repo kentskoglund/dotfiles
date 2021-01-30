@@ -11,7 +11,8 @@ set background=dark
 "let g:gruvbox_contrast_dark = 'hard'
 "colorscheme gruvbox_mod
 "colorscheme rdark-terminal2
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme jellybeans
 
 let g:PaperColor_Theme_Options = {
   \   'theme': {
